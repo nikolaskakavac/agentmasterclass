@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Agent Masterclass",
   city: "Beograd",
+  cityLocative: "Beogradu",
   startingPrice: "600 €",
   beginnerPrice: "600 €",
   salesPrice: "600 €",
@@ -59,7 +60,7 @@ export const programs = [
     eyebrow: "ZA AGENTE KOJI VEĆ RADE",
     title: "Prodajne veštine za agente za nekretnine",
     description:
-      "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni nego u tome što razgovor nije vođen.",
+      "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni, nego u tome što razgovor nije vođen.",
     href: "/prodajne-vestine",
     price: siteConfig.salesPrice,
     variant: "dark" as const,

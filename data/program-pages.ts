@@ -44,13 +44,13 @@ export const beginnerProgram: ProgramPageData = {
     "Da samostalno pozoveš prodavca, zakažeš izlazak i dođeš do stana u ponudi",
     "Da odrediš realnu cenu nekretnine i da je obrazložiš prodavcu koji traži previše",
     "Da klijentu na licu mesta kažeš koliko ga kupovina ukupno košta",
-    "Da prepoznaš problem u papirima pre nego što uđeš u posao, i da znaš kada se staje",
+    "Da prepoznaš problem u papirima pre nego što uđeš u posao i da znaš kada se staje",
     "Da vodiš obilazak, odgovoriš na prigovor i dovedeš posao do potpisa",
     "Da izađeš na stručni ispit pripremljen, sa planom učenja koji dobijaš na kursu",
   ],
   materials: [
     { title: "Udžbenik kursa", description: "vodi te kroz sva četiri termina, nosiš ga na časove i ostaje ti posle kursa" },
-    { title: "Skripta prigovora sa telefona", description: "najčešći prigovori prodavaca kada zoveš da dobiješ stan, i proveren odgovor na svaki" },
+    { title: "Skripta prigovora sa telefona", description: "najčešći prigovori prodavaca kada zoveš da dobiješ stan i proveren odgovor na svaki" },
     { title: "Struktura poziva", description: "kako se poziv otvara, prvih deset sekundi i način koji u praksi daje rezultat" },
     { title: "Priručnik sa procedurama", description: "kontrolne liste dokumenata, tok posla od poziva do uknjižbe, situacije u kojima se staje" },
     { title: "Gradivo za stručni ispit", description: "sa planom učenja po nedeljama" },
@@ -58,7 +58,7 @@ export const beginnerProgram: ProgramPageData = {
   exam: {
     paragraphs: [
       "Zakon o posredovanju u prometu i zakupu nepokretnosti propisuje da poslove posredovanja ne sme da obavlja lice bez položenog stručnog ispita. Ispit se polaže pred Ministarstvom trgovine.",
-      "Kurs te uvodi u oblasti koje ispit pokriva, daje ti gradivo i plan učenja, i pokriva praktični deo posla koji ispit uopšte ne dodiruje.",
+      "Kurs te uvodi u oblasti koje ispit pokriva, daje ti gradivo i plan učenja i pokriva praktični deo posla koji ispit uopšte ne dodiruje.",
     ],
     disclaimer: "Agent Masterclass je privatna obuka. Uverenje o položenom stručnom ispitu izdaje isključivo Ministarstvo trgovine. Naš program je priprema za ispit i za rad, ne zamena za ispit i ne izdavanje licence.",
   },
@@ -71,7 +71,7 @@ export const salesProgram: ProgramPageData = {
   slug: "prodajne-vestine",
   eyebrow: "ZA AGENTE KOJI VEĆ RADE",
   title: "Prodajne veštine za agente za nekretnine",
-  mobileIntro: "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni nego u tome što razgovor nije vođen. Prepušten je klijentu.",
+  mobileIntro: "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni, nego u tome što razgovor nije vođen. Prepušten je klijentu.",
   continuation: ["Ovaj program se bavi isključivo time: kako se otkriva šta klijent stvarno traži, kako se drži kontrola obilaska i kako se posao dovodi do odluke."],
   coverage: ["Pitanja koja otkrivaju stvarni budžet, rok i kriterijume", "Čitanje signala interesovanja i otpora tokom obilaska", "Četiri tipa klijenta i kako se pristup menja za svaki", "Prigovori: struktura odgovora koja ne ulazi u odbranu", "Pregovaranje, zatvaranje i praćenje klijenta posle „javićemo se”"],
   saturdays: [
@@ -80,7 +80,7 @@ export const salesProgram: ProgramPageData = {
     { number: "3. subota", title: "Otpor", date: dates[2], description: "Četiri tipa klijenta, struktura odgovora na prigovor i matrica prigovora. Simulacija obilaska sa skrivenim prigovorima." },
     { number: "4. subota", title: "Odluka", date: dates[3], description: "Pregovaranje o ceni, prepoznavanje trenutka za zatvaranje i praćenje klijenta. Završna simulacija celog puta." },
   ],
-  outcomes: ["Da u prvom razgovoru izvučeš stvarni budžet, rok i kriterijume klijenta", "Da prepoznaš kada klijent otvara, a kada se zatvara, i šta u tom trenutku da uradiš", "Da prilagodiš prezentaciju iste nekretnine različitim tipovima klijenata", "Da odgovoriš na prigovor bez ulaska u odbranu", "Da vodiš pregovore sa obe strane i da tražiš odluku bez pritiska", "Da imaš sistem praćenja klijenta umesto da posao ostane na „javićemo se”"],
+  outcomes: ["Da u prvom razgovoru izvučeš stvarni budžet, rok i kriterijume klijenta", "Da prepoznaš kada klijent otvara, a kada se zatvara i šta u tom trenutku da uradiš", "Da prilagodiš prezentaciju iste nekretnine različitim tipovima klijenata", "Da odgovoriš na prigovor bez ulaska u odbranu", "Da vodiš pregovore sa obe strane i da tražiš odluku bez pritiska", "Da imaš sistem praćenja klijenta umesto da posao ostane na „javićemo se”"],
   materials: [
     { title: "Set pitanja za prvi kontakt", description: "za kvalifikaciju klijenta pre izlaska na teren" },
     { title: "Struktura vođenja obilaska", description: "jedna strana koju nosiš na teren" },
