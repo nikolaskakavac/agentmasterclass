@@ -35,7 +35,7 @@ export const beginnerProgram: ProgramPageData = {
     "Priručnik sa procedurama i papirologijom + gradivo za stručni ispit",
   ],
   saturdays: [
-    { number: "1. subota", title: "Posao i prvi nalog", date: dates[0], description: "Kako se zarađuje, kako se dolazi do stana u ponudi, prvi razgovor sa prodavcem i potpis ugovora o posredovanju. Dan se završava simulacijom celog puta od poziva do potpisa." },
+    { number: "1. subota", title: "Posao i prva prodaja", date: dates[0], description: "Kako se zarađuje, kako se dolazi do stana u ponudi, prvi razgovor sa prodavcem i potpis ugovora o posredovanju. Dan se završava simulacijom celog puta od poziva do potpisa." },
     { number: "2. subota", title: "Cena", date: dates[1], description: "Procena vrednosti, ukupan trošak za klijenta, kako se prodavcu saopštava cena niža od očekivane. Simulacija prezentacije procene prodavcu koji se ne slaže." },
     { number: "3. subota", title: "Kupac", date: dates[2], description: "Kvalifikacija kupca, vođenje obilaska i rad na prigovorima. Simulacija od poziva po oglasu do prigovora." },
     { number: "4. subota", title: "Zaključenje", date: dates[3], description: "Pregovori, zatvaranje i praćenje klijenta. Realne situacije sa papirima kroz odlučivanje. Završna simulacija cele transakcije." },
