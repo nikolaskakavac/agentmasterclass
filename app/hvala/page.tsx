@@ -29,10 +29,14 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Pro
     <p className="eyebrow">AGENT MASTERCLASS</p>
     <h1>Prijava je primljena.</h1>
     <p>Detalji o programu i narednim koracima biće potvrđeni pre početka obuke.</p>
-    {application.paymentStatus === "PAID" ? <p className="submission-message">Plaćanje je uspešno potvrđeno. Tvoje mesto je rezervisano.</p> : <div className="payment-selection">
-      <p className="eyebrow">PLAĆANJE</p>
+    {application.paymentStatus === "PAID" ? <div className="payment-status payment-status-paid">
+      <p className="eyebrow">PLAĆANJE POTVRĐENO</p>
+      <h2>Tvoje mesto je rezervisano.</h2>
+      <p>Plaćanje je uspešno potvrđeno.</p>
+    </div> : <div className={`payment-status ${application.paymentStatus === "PENDING" ? "payment-status-pending" : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "payment-status-unsuccessful" : "payment-status-ready"}`}>
+      <p className="eyebrow">{application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "PLAĆANJE NIJE ZAVRŠENO" : "PLAĆANJE"}</p>
       <h2>{application.paymentStatus === "PENDING" ? "Potvrda plaćanja je u obradi" : "Rezerviši mesto"}</h2>
-      <p>{application.paymentStatus === "PENDING" ? "Status će biti potvrđen nakon bezbedne provere Stripe plaćanja." : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "Plaćanje nije završeno. Možeš ponovo otvoriti bezbednu Stripe stranicu za plaćanje." : "Prijava je sačuvana. Plaćanje karticom završava se na bezbednoj Stripe stranici."}</p>
+      <p>{application.paymentStatus === "PENDING" ? "Status će biti potvrđen nakon bezbedne provere Stripe plaćanja." : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "Možeš ponovo otvoriti bezbednu Stripe stranicu za plaćanje." : "Prijava je sačuvana. Plaćanje karticom završava se na bezbednoj Stripe stranici."}</p>
       {application.program !== "UNSURE" && application.paymentStatus !== "PENDING" && <div className="payment-methods"><CheckoutButton applicationId={application.id} /></div>}
     </div>}
     <div className="thank-you-actions"><Link className="button button-primary" href={programHref}>Pogledaj program →</Link></div>
