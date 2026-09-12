@@ -30,7 +30,7 @@ export function Header() {
       <Link href="/" className="brand" aria-label="Agent Masterclass, početna">Agent<span>Masterclass</span></Link>
       <nav aria-label="Glavna navigacija" className="hidden items-center gap-7 lg:flex">
         {navigation.map((item) => <Link key={item.href} href={item.href} className="nav-link">{item.label}</Link>)}
-        <Link href="/uplata" className="resume-nav-link"><span>Već si se prijavio?</span><strong>Nastavi na uplatu →</strong></Link>
+        <Link href="/uplata" className="resume-nav-link"><span>Već si se prijavio?</span><strong>Nastavi na uplatu</strong></Link>
         <Link href="/prijava" className="button button-primary h-12">Prijavi se</Link>
       </nav>
       <button ref={buttonRef} type="button" className="hamburger lg:hidden" aria-label={open ? "Zatvori meni" : "Otvori meni"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>
@@ -40,7 +40,7 @@ export function Header() {
     <nav id="mobile-navigation" aria-label="Mobilna navigacija" aria-hidden={!open} data-open={open} className="mobile-nav lg:hidden">
       <Container className="flex flex-col py-3">
         {navigation.map((item) => <Link key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">→</span></Link>)}
-        <Link href="/uplata" className="resume-mobile-link" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}><span><small>Već si se prijavio?</small>Nastavi na uplatu</span><b aria-hidden="true">→</b></Link>
+        <Link href="/uplata" className="resume-mobile-link" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}><span><small>Već si se prijavio?</small><strong>Nastavi na uplatu</strong></span></Link>
       </Container>
     </nav>
   </header>;

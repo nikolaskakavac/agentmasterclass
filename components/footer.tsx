@@ -19,7 +19,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <p>© {siteConfig.year} Agent Masterclass</p>
-        <div className="footer-resume-action"><span>Već si se prijavio?</span><Link href="/uplata">Nastavi na uplatu →</Link></div>
+        <div className="footer-resume-action"><span>Već si se prijavio?</span><Link href="/uplata">Nastavi na uplatu</Link></div>
       </div>
     </Container>
   </footer>;

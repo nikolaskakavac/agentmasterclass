@@ -104,7 +104,7 @@ export function ApplicationForm({ initialProgram }: { initialProgram: ProgramVal
 
   return <div className="application-layout">
     <form ref={formRef} className="application-form" noValidate onSubmit={submit}>
-      <div className="application-heading"><p className="eyebrow">PRIJAVA</p><h1>Prijava za Agent Masterclass</h1><div className="returning-applicant-action"><span>Već si se prijavio?</span><Link href="/uplata">Nastavi direktno na uplatu →</Link></div></div>
+      <div className="application-heading"><p className="eyebrow">PRIJAVA</p><h1>Prijava za Agent Masterclass</h1><div className="returning-applicant-action"><span>Već si se prijavio?</span><Link href="/uplata">Nastavi direktno na uplatu</Link></div></div>
       <p className="step-indicator">Korak {step} od 2</p>
       <fieldset className={`application-step ${step === 1 ? "is-current" : ""}`}>
         <legend>Kontakt</legend>
