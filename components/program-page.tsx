@@ -31,7 +31,7 @@ function AudienceFit({ program }: { program: ProgramPageData }) {
 function PriceCard({ program, sticky = false }: { program: ProgramPageData; sticky?: boolean }) {
   return <aside className={`price-card ${sticky ? "price-card-sticky" : ""}`} aria-label="Termin i cena">
     <p className="eyebrow">PROGRAM UŽIVO</p>
-    <p>4 subote · 4 sata po terminu</p><p>{siteConfig.city}</p><div className="price-value"><strong>{program.price}</strong></div>
+    <p>4 subote · 3 bloka po 70 minuta · 30 minuta pauze</p><p>{siteConfig.city}</p><div className="price-value"><strong>{program.price}</strong></div>
     <ButtonLink href={applicationHref(program.slug)}>Rezerviši mesto</ButtonLink><p className="places-left">Broj mesta u grupi je ograničen.</p>
   </aside>;
 }
@@ -39,7 +39,7 @@ function PriceCard({ program, sticky = false }: { program: ProgramPageData; stic
 export function ProgramPage({ program }: { program: ProgramPageData }) {
   const fullIntro = [program.mobileIntro, ...program.continuation].join(" ");
   return <main className="program-page">
-    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se i nastavi na uplatu</ButtonLink><p className="program-hero-meta">4 subote · 4 sata po terminu · {program.price}</p></div></Container></section>
+    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se i nastavi na uplatu</ButtonLink><p className="program-hero-meta">4 subote · 3 bloka po 70 minuta · 30 minuta pauze · {program.price}</p></div></Container></section>
     <Container className="program-layout"><div className="program-main">
       <section className="program-continuation">{program.continuation.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
       <Section><SectionHeading eyebrow="PROGRAM" title="Šta pokrivamo" /><Checklist items={program.coverage} /></Section>

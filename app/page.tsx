@@ -11,13 +11,13 @@ const reasons = [
 ] as const;
 
 const schedule = [
-  ["Blok 1", "60 min", "Tema dana + vežba"], ["Blok 2", "60 min", "Nastavak + vežba"], ["Pauza", "30 min", "Kafa i razmena iskustava"], ["Blok 3", "60 min", "Prodajni deo + vežba"], ["Blok 4", "60 min", "Simulacija cele faze posla"],
+  ["Blok 1", "70 min", "Tema dana + vežba"], ["Blok 2", "70 min", "Nastavak + vežba"], ["Pauza", "30 min", "Kafa i razmena iskustava"], ["Blok 3", "70 min", "Prodajni deo + vežba i simulacija cele faze posla"],
 ] as const;
 
 const faq = [
   { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent, izaberi program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom, izaberi program prodajnih veština." },
   { question: "Da li dobijam licencu?", answer: "Ne. Uverenje o položenom stručnom ispitu izdaje Ministarstvo trgovine. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred Ministarstvom." },
-  { question: "Koliko traje kurs?", answer: "Četiri subote, po četiri sata aktivne nastave, jednom nedeljno. Završava se za mesec dana." },
+  { question: "Koliko traje kurs?", answer: "Četiri subote. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze." },
   { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka. Program se zasniva na simulacijama koje se izvode u sali." },
   { question: "Koliko ljudi je u grupi?", answer: "Grupa je ograničena kako bi svaki polaznik stigao da odigra scenarije." },
 ] as const;
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="program-grid">
           {programs.map((program) => <article id={program.id} key={program.id} className={`program-card program-${program.variant}`}>
             <p className="eyebrow">{program.eyebrow}</p><h3>{program.title}</h3><p>{program.description}</p>
-            <p className="program-meta">4 subote · 4 sata po terminu · {program.price}</p>
+            <p className="program-meta">4 subote · 3 bloka po 70 minuta · 30 minuta pauze · {program.price}</p>
             <ButtonLink href={program.href} variant={program.variant === "dark" ? "primary" : "secondary"}>Pogledaj program <span aria-hidden="true">→</span></ButtonLink>
           </article>)}
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
 
     <Section className="schedule-section">
       <Container className="schedule-grid"><div><SectionHeading eyebrow="JEDAN DAN U SALI" title="Kako izgleda jedan termin" /><div className="timeline">{schedule.map(([block, time, description]) => <div className="timeline-row" key={block}><span className="timeline-dot" /><p><strong>{block}</strong><small>{time}</small></p><p>{description}</p></div>)}</div></div>
-        <aside className="duration-card"><p className="duration-number">4<small> sata</small></p><h3>aktivne nastave</h3><p>Pauza ne ulazi u to vreme. Ukupno vreme u sali je 4 sata i 30 minuta.</p></aside>
+        <aside className="duration-card"><p className="duration-number">3<small> bloka</small></p><h3>po 70 minuta</h3><p>Uz 30 minuta pauze.</p></aside>
       </Container>
     </Section>
 

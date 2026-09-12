@@ -95,7 +95,7 @@ export const salesProgram: ProgramPageData = {
 export const programFaq = [
   { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent, izaberi program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom, izaberi program prodajnih veština." },
   { question: "Da li dobijam licencu?", answer: "Ne. Uverenje o položenom stručnom ispitu izdaje Ministarstvo trgovine. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred Ministarstvom." },
-  { question: "Koliko traje kurs?", answer: "Četiri subote, po četiri sata aktivne nastave, jednom nedeljno. Završava se za mesec dana." },
+  { question: "Koliko traje kurs?", answer: "Četiri subote. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze." },
   { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka. Program se zasniva na simulacijama koje se izvode u sali." },
   { question: "Koliko ljudi je u grupi?", answer: "Grupa je ograničena kako bi svaki polaznik stigao da odigra scenarije." },
 ] as const;
