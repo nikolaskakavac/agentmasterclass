@@ -19,6 +19,7 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <p>© {siteConfig.year} Agent Masterclass</p>
+        <Link href="/uplata">Već si se prijavio? Nastavi na uplatu</Link>
       </div>
     </Container>
   </footer>;

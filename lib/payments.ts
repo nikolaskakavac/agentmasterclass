@@ -30,11 +30,34 @@ export function getStripePriceId(program: Program) {
 }
 
 export function isReusableCheckoutSession(session: Stripe.Checkout.Session) {
-  return session.status === "open" && Boolean(session.url);
+  return session.status === "open" && session.payment_status === "unpaid" && Boolean(session.url);
+}
+
+export type CheckoutSessionState = "not_started" | "resumable" | "processing" | "expired" | "incomplete" | "unavailable";
+
+export async function getCheckoutSessionState(paymentReference: string | null): Promise<CheckoutSessionState> {
+  if (!paymentReference) return "not_started";
+
+  try {
+    const session = await getStripeClient().checkout.sessions.retrieve(paymentReference, { expand: ["payment_intent"] });
+    if (session.payment_status === "paid" || session.payment_status === "no_payment_required") return "processing";
+    if (isReusableCheckoutSession(session)) return "resumable";
+    if (session.status === "expired") return "expired";
+
+    const paymentIntent = typeof session.payment_intent === "object" ? session.payment_intent : null;
+    if (session.status === "complete" && paymentIntent?.status === "processing") return "processing";
+    if (session.status === "complete") return "processing";
+    return "incomplete";
+  } catch (error) {
+    if (error instanceof StripeConfigurationError) console.error("Stripe Checkout state configuration error:", error.message);
+    else if (error instanceof Stripe.errors.StripeError) console.error("Stripe Checkout state API error:", error.type, error.code);
+    else console.error("Checkout session state error:", error);
+    return "unavailable";
+  }
 }
 
 export type ApplicationCheckoutResult =
-  | { status: "ready"; checkoutUrl: string }
+  | { status: "ready"; checkoutUrl: string; resumed: boolean }
   | { status: "not_found" | "already_paid" | "unsupported_program" | "processing" | "not_configured" | "stripe_error" | "database_error" };
 
 export async function startApplicationCheckout(applicationId: string, origin: string): Promise<ApplicationCheckoutResult> {
@@ -52,7 +75,7 @@ export async function startApplicationCheckout(applicationId: string, origin: st
     const stripe = getStripeClient();
     if (application.paymentReference) {
       const existingSession = await stripe.checkout.sessions.retrieve(application.paymentReference);
-      if (isReusableCheckoutSession(existingSession)) return { status: "ready", checkoutUrl: existingSession.url! };
+      if (isReusableCheckoutSession(existingSession)) return { status: "ready", checkoutUrl: existingSession.url!, resumed: true };
       if (existingSession.status === "complete" && application.paymentStatus === "PENDING") return { status: "processing" };
     }
 
@@ -81,7 +104,7 @@ export async function startApplicationCheckout(applicationId: string, origin: st
       return { status: "database_error" };
     }
 
-    return { status: "ready", checkoutUrl: session.url };
+    return { status: "ready", checkoutUrl: session.url, resumed: false };
   } catch (error) {
     if (error instanceof StripeConfigurationError) {
       console.error("Stripe Checkout configuration error:", error.message);

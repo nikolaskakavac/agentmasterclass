@@ -38,10 +38,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ status: "not_found", message: genericMessage });
     }
     if (application.paymentStatus === "PAID") return NextResponse.json({ status: "paid", message: "Uplata je već evidentirana." });
-    if (application.paymentStatus === "PENDING") return NextResponse.json({ status: "pending", message: "Uplata se obrađuje." });
-
     const checkout = await startApplicationCheckout(application.id, new URL(request.url).origin);
-    if (checkout.status === "ready") return NextResponse.json({ status: "checkout", checkoutUrl: checkout.checkoutUrl });
+    if (checkout.status === "ready") return NextResponse.json({
+      status: "checkout",
+      checkoutUrl: checkout.checkoutUrl,
+      message: checkout.resumed ? "Uplata nije završena. Možeš da nastaviš tamo gde si stao." : "Prijava je pronađena. Nastavi na bezbedno plaćanje karticom.",
+    });
     if (checkout.status === "already_paid") return NextResponse.json({ status: "paid", message: "Uplata je već evidentirana." });
     if (checkout.status === "processing") return NextResponse.json({ status: "pending", message: "Uplata se obrađuje." });
     if (checkout.status === "not_found" || checkout.status === "unsupported_program") {

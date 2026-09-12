@@ -33,7 +33,7 @@ export function ResumePaymentForm() {
       const responseData = await response.json() as ResumeResponse;
       if (!response.ok) throw new Error(responseData.error || "Nastavak plaćanja trenutno nije dostupan.");
       if (responseData.status === "checkout" && responseData.checkoutUrl) {
-        window.location.assign(responseData.checkoutUrl);
+        setResult(responseData);
         return;
       }
       setResult(responseData);
@@ -54,7 +54,7 @@ export function ResumePaymentForm() {
     <label><span>Email</span><input name="email" type="email" autoComplete="email" value={email} required maxLength={254} onChange={(event) => setEmail(event.target.value)} /></label>
     <label><span>Telefon</span><input name="phone" type="tel" inputMode="tel" autoComplete="tel" value={phone} required maxLength={40} onChange={(event) => setPhone(event.target.value)} /></label>
     <button className="button button-primary" type="submit" disabled={loading}>{loading ? "Provera prijave…" : "Pronađi prijavu"}</button>
-    {result?.message && <div className="resume-payment-result" role="status"><p>{result.message}</p>{result.status === "not_found" && <Link href="/prijava">Vrati se na prijavu →</Link>}</div>}
+    {result?.message && <div className="resume-payment-result" role="status"><p>{result.message}</p>{result.status === "checkout" && result.checkoutUrl && <a className="button button-primary" href={result.checkoutUrl}>Nastavi na uplatu</a>}{result.status === "not_found" && <Link href="/prijava">Vrati se na prijavu →</Link>}</div>}
     {result?.error && <p className="submission-message submission-error" role="alert">{result.error}</p>}
   </form>;
 }
