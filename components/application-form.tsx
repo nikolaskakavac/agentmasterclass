@@ -104,7 +104,7 @@ export function ApplicationForm({ initialProgram }: { initialProgram: ProgramVal
 
   return <div className="application-layout">
     <form ref={formRef} className="application-form" noValidate onSubmit={submit}>
-      <div className="application-heading"><p className="eyebrow">PRIJAVA</p><h1>Prijava za Agent Masterclass</h1></div>
+      <div className="application-heading"><p className="eyebrow">PRIJAVA</p><h1>Prijava za Agent Masterclass</h1><div className="returning-applicant-action"><span>Već si se prijavio?</span><Link href="/uplata">Nastavi direktno na uplatu →</Link></div></div>
       <p className="step-indicator">Korak {step} od 2</p>
       <fieldset className={`application-step ${step === 1 ? "is-current" : ""}`}>
         <legend>Kontakt</legend>
@@ -122,7 +122,7 @@ export function ApplicationForm({ initialProgram }: { initialProgram: ProgramVal
         <div className="step-actions"><button type="button" className="button button-secondary step-back" onClick={() => setStep(1)}>Nazad</button><button type="submit" className="button button-primary" disabled={submitting}>{submitting ? "Čuvanje prijave…" : "Pošalji prijavu i nastavi na uplatu"}</button></div>
       </fieldset>
       {submissionError && <p className="submission-message submission-error" role="alert">{submissionError}</p>}
-      <p className="application-note">Prijava se čuva pre uplate. Mesto se potvrđuje uplatom. <Link href="/uplata">Već si se prijavio? Nastavi na uplatu</Link></p>
+      <p className="application-note">Prijava se čuva pre uplate. Mesto se potvrđuje uplatom.</p>
     </form>
     <aside className="application-summary" aria-live="polite">
       <p className="eyebrow">IZABRANI PROGRAM</p>
