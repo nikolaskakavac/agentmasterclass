@@ -80,6 +80,6 @@ export default function Home() {
 
     <Section className="faq-section"><Container className="faq-grid"><SectionHeading eyebrow="DOBRO JE ZNATI" title="Česta pitanja" /><Faq items={faq} /></Container></Section>
 
-    <Section className="final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta po programu je ograničen.</p><ButtonLink href="/prijava">Prijavi se</ButtonLink></div></Container></Section>
+    <Section className="final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta po programu je ograničen.</p><ButtonLink href="/prijava">Prijavi se i nastavi na uplatu</ButtonLink></div></Container></Section>
   </main>;
 }

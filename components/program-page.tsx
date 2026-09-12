@@ -39,7 +39,7 @@ function PriceCard({ program, sticky = false }: { program: ProgramPageData; stic
 export function ProgramPage({ program }: { program: ProgramPageData }) {
   const fullIntro = [program.mobileIntro, ...program.continuation].join(" ");
   return <main className="program-page">
-    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se</ButtonLink><p className="program-hero-meta">4 subote · 4 sata po terminu · {program.price}</p></div></Container></section>
+    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se i nastavi na uplatu</ButtonLink><p className="program-hero-meta">4 subote · 4 sata po terminu · {program.price}</p></div></Container></section>
     <Container className="program-layout"><div className="program-main">
       <section className="program-continuation">{program.continuation.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
       <Section><SectionHeading eyebrow="PROGRAM" title="Šta pokrivamo" /><Checklist items={program.coverage} /></Section>
@@ -51,6 +51,6 @@ export function ProgramPage({ program }: { program: ProgramPageData }) {
       <section className="mobile-price-section"><SectionHeading eyebrow="UPIS" title="Termin i cena" /><PriceCard program={program} /></section>
       <Section className="program-faq"><SectionHeading eyebrow="DOBRO JE ZNATI" title="Česta pitanja" /><Faq items={programFaq} /></Section>
     </div><div className="desktop-price-column"><PriceCard program={program} sticky /></div></Container>
-    <Section className="program-final final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta je ograničen.</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se</ButtonLink></div></Container></Section>
+    <Section className="program-final final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta je ograničen.</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se i nastavi na uplatu</ButtonLink></div></Container></Section>
   </main>;
 }

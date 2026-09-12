@@ -35,8 +35,8 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Pro
       <p>Plaćanje je uspešno potvrđeno.</p>
     </div> : <div className={`payment-status ${application.paymentStatus === "PENDING" ? "payment-status-pending" : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "payment-status-unsuccessful" : "payment-status-ready"}`}>
       <p className="eyebrow">{application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "PLAĆANJE NIJE ZAVRŠENO" : "PLAĆANJE"}</p>
-      <h2>{application.paymentStatus === "PENDING" ? "Potvrda plaćanja je u obradi" : "Rezerviši mesto"}</h2>
-      <p>{application.paymentStatus === "PENDING" ? "Status će biti potvrđen nakon bezbedne provere Stripe plaćanja." : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "Možeš ponovo otvoriti bezbednu Stripe stranicu za plaćanje." : "Prijava je sačuvana. Plaćanje karticom završava se na bezbednoj Stripe stranici."}</p>
+      <h2>{application.paymentStatus === "PENDING" ? "Potvrda plaćanja je u obradi" : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "Rezerviši mesto" : "Potvrdi svoje mesto uplatom"}</h2>
+      <p>{application.paymentStatus === "PENDING" ? "Status će biti potvrđen nakon bezbedne provere Stripe plaćanja." : application.paymentStatus === "FAILED" || application.paymentStatus === "CANCELLED" ? "Možeš ponovo otvoriti bezbednu Stripe stranicu za plaćanje." : "Prijava je sačuvana. Nastavi na bezbedno plaćanje karticom."}</p>
       {application.program !== "UNSURE" && application.paymentStatus !== "PENDING" && <div className="payment-methods"><CheckoutButton applicationId={application.id} /></div>}
     </div>}
     <div className="thank-you-actions"><Link className="button button-primary" href={programHref}>Pogledaj program →</Link></div>
