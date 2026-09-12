@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { Faq } from "@/components/faq";
 import { Testimonials } from "@/components/testimonials";
 import { ButtonLink, Container, IconMark, Section, SectionHeading } from "@/components/ui";
@@ -7,7 +7,7 @@ import { programs, siteConfig } from "@/data/site";
 const reasons = [
   { number: "01", title: "Predaje neko ko i dalje radi ovaj posao", text: "Marija vodi agenciju za nekretnine i aktivno radi sa klijentima. Svi primeri na času su situacije koje su se stvarno desile." },
   { number: "02", title: "Uči se izvođenjem, ne slušanjem", text: "Oko polovine svakog termina je vežba i simulacija. Svaka tehnika se proba odmah, u sali." },
-  { number: "03", title: "Mala grupa", text: `Najviše ${siteConfig.groupSize} polaznika, da bi svako stigao da odigra scenarije i bude ispraćen pojedinačno.` },
+  { number: "03", title: "Mala grupa", text: "Rad u manjoj grupi daje svakom polazniku prostor da odigra scenarije i dobije usmerenje." },
 ] as const;
 
 const schedule = [
@@ -15,11 +15,11 @@ const schedule = [
 ] as const;
 
 const faq = [
-  { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent — program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom — program prodajnih veština." },
+  { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent, izaberi program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom, izaberi program prodajnih veština." },
   { question: "Da li dobijam licencu?", answer: "Ne. Uverenje o položenom stručnom ispitu izdaje Ministarstvo trgovine. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred Ministarstvom." },
   { question: "Koliko traje kurs?", answer: "Četiri subote, po četiri sata aktivne nastave, jednom nedeljno. Završava se za mesec dana." },
-  { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka — program se zasniva na simulacijama koje se izvode u sali." },
-  { question: "Koliko ljudi je u grupi?", answer: `Najviše ${siteConfig.groupSize}, da bi svako stigao da odigra scenarije.` },
+  { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka. Program se zasniva na simulacijama koje se izvode u sali." },
+  { question: "Koliko ljudi je u grupi?", answer: "Grupa je ograničena kako bi svaki polaznik stigao da odigra scenarije." },
 ] as const;
 
 export default function Home() {
@@ -30,15 +30,14 @@ export default function Home() {
           <p className="eyebrow">AGENT MASTERCLASS</p>
           <h1>Škola za agente za nekretnine</h1>
           <p className="hero-mobile-text">Obuka uživo u {siteConfig.city}. Predaje Marija Miškinović, vlasnica agencije za nekretnine.</p>
-          <p className="hero-desktop-text">Dva programa uživo u {siteConfig.city}. Jedan za one koji tek ulaze u posao, drugi za agente koji već rade ali ne zatvaraju dovoljno. Predaje Marija Miškinović, vlasnica agencije za nekretnine sa {siteConfig.yearsExperience} godina iskustva na terenu.</p>
+          <p className="hero-desktop-text">Dva programa uživo u {siteConfig.city}. Jedan za one koji tek ulaze u posao, drugi za agente koji već rade ali ne zatvaraju dovoljno. Predaje Marija Miškinović, vlasnica agencije za nekretnine i aktivni profesionalac sa terena.</p>
           <div className="hero-actions">
             <ButtonLink href="#pocetnici">Tek ulazim u posao <span aria-hidden="true">→</span></ButtonLink>
             <ButtonLink href="#agenti" variant="outline">Već radim kao agent <span aria-hidden="true">→</span></ButtonLink>
           </div>
         </div>
-        <figure className="portrait-frame hero-portrait" aria-label="Mesto za buduću fotografiju Marije Miškinović u realnom radnom okruženju">
-          <div className="portrait-field" aria-hidden="true"><span>M·M</span></div>
-          <figcaption>Fotografija Marije Miškinović biće dodata</figcaption>
+        <figure className="portrait-frame hero-portrait">
+          <Image className="stock-image" src="/images/professional-workshop.jpg" alt="Profesionalna edukacija u učionici" width={1800} height={1200} priority sizes="(min-width: 1024px) 40vw, 100vw" />
         </figure>
       </Container>
     </section>
@@ -49,11 +48,11 @@ export default function Home() {
         <div className="program-grid">
           {programs.map((program) => <article id={program.id} key={program.id} className={`program-card program-${program.variant}`}>
             <p className="eyebrow">{program.eyebrow}</p><h3>{program.title}</h3><p>{program.description}</p>
-            <p className="program-meta">4 subote · 4 sata po terminu · {program.price} RSD</p>
+            <p className="program-meta">4 subote · 4 sata po terminu · {program.price}</p>
             <ButtonLink href={program.href} variant={program.variant === "dark" ? "primary" : "secondary"}>Pogledaj program <span aria-hidden="true">→</span></ButtonLink>
           </article>)}
         </div>
-        <div className="choice-help"><p><strong>Nisi siguran koji je za tebe?</strong> Ako još nisi radio kao agent — prvi. Ako radiš duže od pola godine i problem ti je u razgovoru sa klijentom — drugi.</p><Link href="/kontakt">Pitaj nas <span aria-hidden="true">→</span></Link></div>
+        <div className="choice-help"><p><strong>Nisi siguran koji je za tebe?</strong> Ako još nisi radio kao agent, izaberi prvi program. Ako radiš duže od pola godine i problem ti je u razgovoru sa klijentom, izaberi drugi.</p></div>
       </Container>
     </Section>
 
@@ -65,13 +64,13 @@ export default function Home() {
 
     <Section className="schedule-section">
       <Container className="schedule-grid"><div><SectionHeading eyebrow="JEDAN DAN U SALI" title="Kako izgleda jedan termin" /><div className="timeline">{schedule.map(([block, time, description]) => <div className="timeline-row" key={block}><span className="timeline-dot" /><p><strong>{block}</strong><small>{time}</small></p><p>{description}</p></div>)}</div></div>
-        <aside className="duration-card"><p className="duration-number">4<small> sata</small></p><h3>aktivne nastave</h3><p>Pauza ne ulazi u to vreme — ukupno u sali 4 sata i 30 minuta.</p></aside>
+        <aside className="duration-card"><p className="duration-number">4<small> sata</small></p><h3>aktivne nastave</h3><p>Pauza ne ulazi u to vreme. Ukupno vreme u sali je 4 sata i 30 minuta.</p></aside>
       </Container>
     </Section>
 
     <Section className="teacher-section">
-      <Container className="teacher-grid"><figure className="portrait-frame teacher-photo" aria-label="Mesto za buduću profesionalnu fotografiju Marije Miškinović"><div className="portrait-field" aria-hidden="true"><span>M·M</span></div><figcaption>Fotografija Marije Miškinović biće dodata</figcaption></figure>
-        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Vlasnica agencije {siteConfig.agencyName} · {siteConfig.yearsExperience} godina u prodaji nekretnina</p><p>Marija vodi agenciju {siteConfig.agencyName} i i dalje aktivno radi sa klijentima — ne predaje iz teorije nego iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
+      <Container className="teacher-grid"><figure className="portrait-frame teacher-photo"><Image className="stock-image" src="/images/modern-architecture.jpg" alt="Savremena poslovna arhitektura" width={1600} height={1067} sizes="(min-width: 768px) 40vw, 100vw" /></figure>
+        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
       </Container>
     </Section>
 
@@ -81,6 +80,6 @@ export default function Home() {
 
     <Section className="faq-section"><Container className="faq-grid"><SectionHeading eyebrow="DOBRO JE ZNATI" title="Česta pitanja" /><Faq items={faq} /></Container></Section>
 
-    <Section className="final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Počinje {siteConfig.nextDate}</h2><p className="final-availability">{siteConfig.groupSize} mesta po programu.</p><ButtonLink href="/prijava">Prijavi se</ButtonLink><div className="contact-actions"><span>Pitanje pre prijave?</span><a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div></div></Container></Section>
+    <Section className="final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta po programu je ograničen.</p><ButtonLink href="/prijava">Prijavi se</ButtonLink></div></Container></Section>
   </main>;
 }

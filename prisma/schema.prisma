@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Program {
+  BEGINNER
+  SALES_SKILLS
+  UNSURE
+}
+
+enum Experience {
+  NONE
+  UNDER_SIX_MONTHS
+  SIX_TO_TWELVE_MONTHS
+  ONE_TO_THREE_YEARS
+  OVER_THREE_YEARS
+}
+
+enum ApplicantType {
+  INDIVIDUAL
+  TEAM
+}
+
+enum TeamSize {
+  TWO_TO_THREE
+  FOUR_PLUS
+}
+
+enum PaymentMethod {
+  UNSELECTED
+  CARD
+  BANK_TRANSFER
+}
+
+enum PaymentStatus {
+  NOT_STARTED
+  PENDING
+  PAID
+  FAILED
+  CANCELLED
+}
+
+model Application {
+  id               String        @id @default(cuid())
+  clientRequestId  String        @unique @db.Uuid
+  fullName         String        @db.VarChar(120)
+  email            String        @db.VarChar(254)
+  phone            String        @db.VarChar(40)
+  program          Program
+  experience       Experience
+  challenge        String?       @db.VarChar(1500)
+  applicantType    ApplicantType
+  teamSize         TeamSize?
+  consentAt        DateTime
+  paymentMethod    PaymentMethod @default(UNSELECTED)
+  paymentStatus    PaymentStatus @default(NOT_STARTED)
+  paymentReference String?       @unique @db.VarChar(191)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([program, createdAt])
+  @@index([paymentStatus])
+}

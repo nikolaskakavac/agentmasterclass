@@ -14,14 +14,14 @@ function Checklist({ items }: { items: string[] }) {
 function Curriculum({ items }: { items: ProgramPageData["saturdays"] }) {
   return <>
     <div className="saturday-accordion">{items.map((item, index) => <details key={item.number} open={index === 0}>
-      <summary><span><small>{item.number} · {item.date}</small>{item.title}</span><b aria-hidden="true">+</b></summary><p>{item.description}</p>
+      <summary><span><small>{item.number}</small>{item.title}</span><b aria-hidden="true">+</b></summary><p>{item.description}</p>
     </details>)}</div>
-    <div className="saturday-grid">{items.map((item) => <article key={item.number} className="saturday-card"><div><p className="eyebrow">{item.number}</p><p className="saturday-date">{item.date}</p></div><h3>{item.title}</h3><p>{item.description}</p></article>)}</div>
+    <div className="saturday-grid">{items.map((item) => <article key={item.number} className="saturday-card"><div><p className="eyebrow">{item.number}</p></div><h3>{item.title}</h3><p>{item.description}</p></article>)}</div>
   </>;
 }
 
 function Materials({ items }: { items: ProgramPageData["materials"] }) {
-  return <div className="material-list">{items.map((item, index) => <article key={item.title}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.description && <> — {item.description}</>}</p></article>)}</div>;
+  return <div className="material-list">{items.map((item, index) => <article key={item.title}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.description && <>: {item.description}</>}</p></article>)}</div>;
 }
 
 function AudienceFit({ program }: { program: ProgramPageData }) {
@@ -30,16 +30,16 @@ function AudienceFit({ program }: { program: ProgramPageData }) {
 
 function PriceCard({ program, sticky = false }: { program: ProgramPageData; sticky?: boolean }) {
   return <aside className={`price-card ${sticky ? "price-card-sticky" : ""}`} aria-label="Termin i cena">
-    <p className="eyebrow">{siteConfig.programMonth} grupa</p><div className="price-dates"><span>{siteConfig.date1}</span><span>{siteConfig.date2}</span><span>{siteConfig.date3}</span><span>{siteConfig.date4}</span></div>
-    <p>subotom, {siteConfig.time}</p><p>{siteConfig.address}</p><div className="price-value"><strong>{program.price}</strong><span>RSD</span></div><p>{siteConfig.paymentNote}</p>
-    <ButtonLink href={applicationHref(program.slug)}>Rezerviši mesto</ButtonLink><p className="places-left">Grupa je ograničena na {siteConfig.groupSize} mesta. Kada se popuni, sledeći termin je {siteConfig.nextMonth}.</p>
+    <p className="eyebrow">PROGRAM UŽIVO</p>
+    <p>4 subote · 4 sata po terminu</p><p>{siteConfig.city}</p><div className="price-value"><strong>{program.price}</strong></div>
+    <ButtonLink href={applicationHref(program.slug)}>Rezerviši mesto</ButtonLink><p className="places-left">Broj mesta u grupi je ograničen.</p>
   </aside>;
 }
 
 export function ProgramPage({ program }: { program: ProgramPageData }) {
   const fullIntro = [program.mobileIntro, ...program.continuation].join(" ");
   return <main className="program-page">
-    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow} · UPIS ZA {siteConfig.programMonth}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se za {siteConfig.programMonth} grupu</ButtonLink><p className="program-hero-meta">4 subote · {siteConfig.date1}–{siteConfig.date4} · {program.price} RSD</p></div></Container></section>
+    <section className="program-hero" id="hero"><Container><div className="program-hero-copy"><p className="eyebrow">{program.eyebrow}</p><h1>{program.title}</h1><p className="program-intro-mobile">{program.mobileIntro}</p><p className="program-intro-desktop">{fullIntro}</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se</ButtonLink><p className="program-hero-meta">4 subote · 4 sata po terminu · {program.price}</p></div></Container></section>
     <Container className="program-layout"><div className="program-main">
       <section className="program-continuation">{program.continuation.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
       <Section><SectionHeading eyebrow="PROGRAM" title="Šta pokrivamo" /><Checklist items={program.coverage} /></Section>
@@ -51,6 +51,6 @@ export function ProgramPage({ program }: { program: ProgramPageData }) {
       <section className="mobile-price-section"><SectionHeading eyebrow="UPIS" title="Termin i cena" /><PriceCard program={program} /></section>
       <Section className="program-faq"><SectionHeading eyebrow="DOBRO JE ZNATI" title="Česta pitanja" /><Faq items={programFaq} /></Section>
     </div><div className="desktop-price-column"><PriceCard program={program} sticky /></div></Container>
-    <Section className="program-final final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Počinje {siteConfig.nextDate}</h2><p className="final-availability">{siteConfig.groupSize} mesta.</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se</ButtonLink><div className="contact-actions"><span>Pitanje pre prijave?</span><a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div></div></Container></Section>
+    <Section className="program-final final-section"><Container><div className="final-card"><p className="eyebrow">SLEDEĆA GRUPA</p><h2>Prijave su otvorene</h2><p className="final-availability">Broj mesta je ograničen.</p><ButtonLink href={applicationHref(program.slug)}>Prijavi se</ButtonLink></div></Container></Section>
   </main>;
 }

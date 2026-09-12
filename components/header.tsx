@@ -27,7 +27,7 @@ export function Header() {
   }, [open]);
   return <header className="site-header">
     <Container className="flex h-[72px] items-center justify-between">
-      <Link href="/" className="brand" aria-label="Agent Masterclass — početna">Agent<span>Masterclass</span></Link>
+      <Link href="/" className="brand" aria-label="Agent Masterclass, početna">Agent<span>Masterclass</span></Link>
       <nav aria-label="Glavna navigacija" className="hidden items-center gap-7 lg:flex">
         {navigation.map((item) => <Link key={item.href} href={item.href} className="nav-link">{item.label}</Link>)}
         <Link href="/prijava" className="button button-primary h-12">Prijavi se</Link>

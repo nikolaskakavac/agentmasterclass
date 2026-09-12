@@ -22,7 +22,7 @@ export const beginnerProgram: ProgramPageData = {
   slug: "pocetnici",
   eyebrow: "ZA ONE KOJI TEK ULAZE U POSAO",
   title: "Kako postati uspešan agent za nekretnine",
-  mobileIntro: "Većina ljudi u nekretnine uđe tako što dobije telefon i rečenicu „zovi, snađi se”. To ne donosi rezultat — donosi šest meseci lupanja glavom o zid i povratak na stari posao.",
+  mobileIntro: "Većina ljudi u nekretnine uđe tako što dobije telefon i rečenicu „zovi, snađi se”. To ne donosi rezultat. Donosi šest meseci lupanja glavom o zid i povratak na stari posao.",
   continuation: [
     "Ovaj kurs radi suprotno: dobijaš konkretne, proverene smernice sa terena, od nekoga ko ovaj posao radi svakog dana.",
     "Za mesec dana znaš kako da dođeš do prvog stana koji ćeš prodavati, koliko nekretnina realno vredi, šta klijenta ukupno košta i koje greške te koštaju posla. Radi se uživo, kroz simulacije, a ne slušanjem.",
@@ -63,7 +63,7 @@ export const beginnerProgram: ProgramPageData = {
     disclaimer: "Agent Masterclass je privatna obuka. Uverenje o položenom stručnom ispitu izdaje isključivo Ministarstvo trgovine. Naš program je priprema za ispit i za rad, ne zamena za ispit i ne izdavanje licence.",
   },
   fit: ["Razmišljaš da pređeš u nekretnine i hoćeš da uđeš pripremljen", "Tek si se zaposlio u agenciji i niko te ne obučava", "Vodiš agenciju i zaposlio si nove ljude"],
-  notFit: ["Radiš kao agent duže od godinu dana — za tebe je program prodajnih veština", "Očekuješ da posle četiri subote budeš gotov agent — ovo je temelj, ne kraj učenja", "Očekuješ licencu na kraju kursa — licencu izdaje Ministarstvo"],
+  notFit: ["Radiš kao agent duže od godinu dana. Za tebe je program prodajnih veština", "Očekuješ da posle četiri subote budeš gotov agent. Ovo je temelj, ne kraj učenja", "Očekuješ licencu na kraju kursa. Licencu izdaje Ministarstvo"],
   price: siteConfig.beginnerPrice,
 };
 
@@ -71,9 +71,9 @@ export const salesProgram: ProgramPageData = {
   slug: "prodajne-vestine",
   eyebrow: "ZA AGENTE KOJI VEĆ RADE",
   title: "Prodajne veštine za agente za nekretnine",
-  mobileIntro: "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni nego u tome što razgovor nije vođen — prepušten je klijentu.",
+  mobileIntro: "Imaš kontakte, izlaziš na terene, a klijenti se ne javljaju. Najčešće problem nije u ceni nego u tome što razgovor nije vođen. Prepušten je klijentu.",
   continuation: ["Ovaj program se bavi isključivo time: kako se otkriva šta klijent stvarno traži, kako se drži kontrola obilaska i kako se posao dovodi do odluke."],
-  coverage: ["Pitanja koja otkrivaju stvarni budžet, rok i kriterijume", "Čitanje signala interesovanja i otpora tokom obilaska", "Četiri tipa klijenta i kako se pristup menja za svaki", "Prigovori — struktura odgovora koja ne ulazi u odbranu", "Pregovaranje, zatvaranje i praćenje klijenta posle „javićemo se”"],
+  coverage: ["Pitanja koja otkrivaju stvarni budžet, rok i kriterijume", "Čitanje signala interesovanja i otpora tokom obilaska", "Četiri tipa klijenta i kako se pristup menja za svaki", "Prigovori: struktura odgovora koja ne ulazi u odbranu", "Pregovaranje, zatvaranje i praćenje klijenta posle „javićemo se”"],
   saturdays: [
     { number: "1. subota", title: "Otkrivanje", date: dates[0], description: "Kako se otkriva šta klijent stvarno traži, a ne šta kaže. Kvalifikacija i struktura prvog poziva. Simulacija celog prvog kontakta." },
     { number: "2. subota", title: "Vođenje", date: dates[1], description: "Čitanje signala tokom obilaska, izgradnja poverenja i preuzimanje vođenja razgovora. Simulacija kompletnog obilaska." },
@@ -88,14 +88,14 @@ export const salesProgram: ProgramPageData = {
     { title: "Skripta za pregovaranje i praćenje klijenta", description: "" },
   ],
   fit: ["Radiš kao agent najmanje pola godine", "Imaš dovoljno kontakata, ali premalo zatvorenih poslova", "Vodiš agenciju i želiš da tim priča istim jezikom", "Spreman si da igraš scenarije naglas pred grupom"],
-  notFit: ["Tek ulaziš u posao — za tebe je program za početnike", "Očekuješ pravnu obuku, ugovore i procenu vrednosti — to je predmet drugog programa", "Ne želiš da vežbaš pred drugima"],
+  notFit: ["Tek ulaziš u posao. Za tebe je program za početnike", "Očekuješ pravnu obuku, ugovore i procenu vrednosti. To je predmet drugog programa", "Ne želiš da vežbaš pred drugima"],
   price: siteConfig.salesPrice,
 };
 
 export const programFaq = [
-  { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent — program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom — program prodajnih veština." },
+  { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent, izaberi program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom, izaberi program prodajnih veština." },
   { question: "Da li dobijam licencu?", answer: "Ne. Uverenje o položenom stručnom ispitu izdaje Ministarstvo trgovine. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred Ministarstvom." },
   { question: "Koliko traje kurs?", answer: "Četiri subote, po četiri sata aktivne nastave, jednom nedeljno. Završava se za mesec dana." },
-  { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka — program se zasniva na simulacijama koje se izvode u sali." },
-  { question: "Koliko ljudi je u grupi?", answer: `Najviše ${siteConfig.groupSize}, da bi svako stigao da odigra scenarije.` },
+  { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka. Program se zasniva na simulacijama koje se izvode u sali." },
+  { question: "Koliko ljudi je u grupi?", answer: "Grupa je ograničena kako bi svaki polaznik stigao da odigra scenarije." },
 ] as const;
