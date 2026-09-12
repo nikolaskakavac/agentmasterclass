@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 type CheckoutResponse = { checkoutUrl?: string; error?: string };
 
-export function CheckoutButton({ applicationId }: { applicationId: string }) {
+export function CheckoutButton({ applicationId, label = "Plati karticom" }: { applicationId: string; label?: string }) {
   const requestInProgress = useRef(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -33,7 +33,7 @@ export function CheckoutButton({ applicationId }: { applicationId: string }) {
 
   return <>
     <button className="button button-primary" type="button" disabled={loading} onClick={openCheckout}>
-      {loading ? "Otvaranje plaćanja…" : "Plati karticom"}
+      {loading ? "Otvaranje plaćanja…" : label}
     </button>
     {error && <p className="submission-message submission-error" role="alert">{error}</p>}
   </>;

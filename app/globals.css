@@ -421,6 +421,7 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
 .consent-field a { color:var(--accent-strong); text-decoration:underline; text-underline-offset:3px; }
 .consent-field .application-error { grid-column:2; }
 .application-note { margin:26px 0 0; padding-top:22px; border-top:1px solid var(--line); color:#566169; font-size:.9rem; }
+.application-note a,.resume-payment-result a { color:var(--accent-strong); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
 .submission-message { margin:22px 0 0; padding:16px; border-left:3px solid var(--accent); background:#e9e6df; }
 .submission-error { border-color:#9b3f34; color:#76281f; }
 .application-summary { padding:28px 24px; background:var(--ink); color:var(--white); }
@@ -455,6 +456,13 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
 .bank-instructions dd { margin:0; overflow-wrap:anywhere; font-weight:700; }
 .bank-instructions p { margin-bottom:0; }
 .thank-you-actions { display:flex; justify-content:center; margin-top:34px; }
+.resume-payment-page { display:grid; align-items:center; }
+.resume-payment-form { display:grid; width:100%; max-width:620px; gap:18px; margin:auto; padding:32px 24px; background:var(--white); }
+.resume-payment-form .application-heading h1 { margin-bottom:14px; }
+.resume-payment-form .application-heading p:last-child { margin-bottom:0; color:#566169; }
+.resume-payment-form>.button { width:100%; margin-top:4px; }
+.resume-payment-result { padding:18px 0 0; border-top:1px solid var(--line); }
+.resume-payment-result p { margin-bottom:8px; }
 
 @media (min-width:768px) {
   .application-page { padding:76px 0 100px; }
@@ -466,6 +474,7 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
   .step-actions { display:block; }
   .step-actions .button { width:auto; min-width:230px; }
   .application-summary { position:sticky; top:96px; padding:38px 34px; }
+  .resume-payment-form { padding:48px; }
   .payment-status { margin-top:42px; padding-top:34px; }
   .thank-you-page { padding:78px 0; }
   .thank-you-card h1 { font-size:clamp(3.2rem,5vw,4rem); }

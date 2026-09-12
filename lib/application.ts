@@ -44,12 +44,20 @@ export function normalizeText(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().replace(/\s+/g, " ").slice(0, maxLength) : "";
 }
 
+export function normalizeEmail(value: unknown) {
+  return normalizeText(value, 254).toLowerCase();
+}
+
+export function normalizePhoneForMatch(value: unknown) {
+  return normalizeText(value, 40).replace(/\D/g, "");
+}
+
 export function validateApplication(input: unknown) {
   const raw = (input && typeof input === "object" ? input : {}) as Partial<ApplicationPayload>;
   const data = {
     clientRequestId: normalizeText(raw.clientRequestId, 36),
     fullName: normalizeText(raw.fullName, 120),
-    email: normalizeText(raw.email, 254).toLowerCase(),
+    email: normalizeEmail(raw.email),
     phone: normalizeText(raw.phone, 40),
     program: normalizeText(raw.program, 30),
     experience: normalizeText(raw.experience, 40),

@@ -122,7 +122,7 @@ export function ApplicationForm({ initialProgram }: { initialProgram: ProgramVal
         <div className="step-actions"><button type="button" className="button button-secondary step-back" onClick={() => setStep(1)}>Nazad</button><button type="submit" className="button button-primary" disabled={submitting}>{submitting ? "Čuvanje prijave…" : "Pošalji prijavu i nastavi na uplatu"}</button></div>
       </fieldset>
       {submissionError && <p className="submission-message submission-error" role="alert">{submissionError}</p>}
-      <p className="application-note">Nakon prijave dobijaš email sa detaljima i uputstvom za uplatu. Mesto se rezerviše po uplati.</p>
+      <p className="application-note">Prijava se čuva pre uplate. Mesto se potvrđuje uplatom. <Link href="/uplata">Već si se prijavio? Nastavi na uplatu</Link></p>
     </form>
     <aside className="application-summary" aria-live="polite">
       <p className="eyebrow">IZABRANI PROGRAM</p>

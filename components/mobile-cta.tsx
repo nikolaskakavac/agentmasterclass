@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 
 export function MobileCta() {
   const pathname = usePathname();
-  const hiddenOnFlowPage = pathname === "/prijava" || pathname === "/hvala";
+  const hiddenOnFlowPage = pathname === "/prijava" || pathname === "/hvala" || pathname === "/uplata";
   const program = pathname === "/pocetnici" ? "pocetnici" : pathname === "/prodajne-vestine" ? "prodajne-vestine" : null;
   const price = program === "pocetnici" ? siteConfig.beginnerPrice : program === "prodajne-vestine" ? siteConfig.salesPrice : siteConfig.startingPrice;
   const [visible, setVisible] = useState(false);
