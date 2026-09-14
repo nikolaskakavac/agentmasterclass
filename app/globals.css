@@ -96,6 +96,10 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
 .teacher-role { margin-bottom:25px; color:#765329; font-weight:650; }
 .teacher-copy>p:not(.eyebrow,.teacher-role) { max-width:650px; }
 .teacher-copy .button { margin-top:10px; }
+.testimonials-section { background:var(--ink); color:var(--white); }
+.testimonial-video-grid { display:grid; gap:22px; }
+.testimonial-video { width:100%; max-width:380px; margin-inline:auto; border-top:3px solid var(--accent); background:#080c10; }
+.testimonial-video video { width:100%; height:auto; aspect-ratio:9/16; display:block; background:#080c10; object-fit:contain; }
 .teams-section { padding-top:0; background:var(--white); }
 .teams-band { display:grid; gap:24px; padding:30px 24px; background:var(--paper); border-top:3px solid var(--accent); }
 .teams-band h2 { margin-bottom:12px; }
@@ -171,6 +175,7 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
   .schedule-grid { grid-template-columns:minmax(0,1.55fr) minmax(300px,.75fr); gap:80px; }
   .timeline-row { grid-template-columns:130px 1fr; padding:20px 0 20px 25px; }
   .teacher-grid { grid-template-columns:minmax(320px,.8fr) minmax(0,1.2fr); gap:80px; }
+  .testimonial-video-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.4vw,30px); }
   .teams-band { grid-template-columns:1fr auto; align-items:center; padding:48px 54px; }
   .faq-grid { grid-template-columns:.7fr 1.3fr; gap:80px; }
   .final-card { padding:70px; }
