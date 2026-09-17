@@ -1,10 +1,31 @@
+"use client";
+
+import { useRef } from "react";
 import { Container, Section, SectionHeading } from "@/components/ui";
 
 export function Testimonials() {
+  const railRef = useRef<HTMLDivElement>(null);
+
+  const scrollTestimonials = (direction: -1 | 1) => {
+    const rail = railRef.current;
+    const firstCard = rail?.querySelector<HTMLElement>(".testimonial-video");
+
+    if (!rail || !firstCard) return;
+
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap) || 0;
+    rail.scrollBy({ left: direction * (firstCard.offsetWidth + gap), behavior: "smooth" });
+  };
+
   return <Section className="testimonials-section">
     <Container>
-      <SectionHeading eyebrow="ISKUSTVA POLAZNIKA" title="Utisci i rezultati" />
-      <div className="testimonial-video-grid">
+      <div className="testimonial-heading-row">
+        <SectionHeading eyebrow="ISKUSTVA POLAZNIKA" title="Utisci i rezultati" />
+        <div className="testimonial-rail-controls" aria-label="Kontrole video utisaka">
+          <button type="button" onClick={() => scrollTestimonials(-1)} aria-label="Prethodni video utisak">←</button>
+          <button type="button" onClick={() => scrollTestimonials(1)} aria-label="Sledeći video utisak">→</button>
+        </div>
+      </div>
+      <div className="testimonial-video-grid" ref={railRef}>
         {[1, 2, 3].map((number) => <div className="testimonial-video" key={number}>
           <video
             aria-label={`Video utisak polaznika ${number}`}
