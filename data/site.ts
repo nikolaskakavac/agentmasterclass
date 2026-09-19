@@ -5,6 +5,7 @@ export const siteConfig = {
   startingPrice: "600 €",
   beginnerPrice: "600 €",
   salesPrice: "600 €",
+  programDuration: "4 dana predavanja tokom jednog meseca",
   nextDate: "",
   groupSize: "",
   yearsExperience: "",
@@ -48,7 +49,7 @@ export const programs = [
   {
     id: "pocetnici",
     eyebrow: "ZA ONE KOJI TEK ULAZE U POSAO",
-    title: "Kako postati uspešan agent za nekretnine",
+    title: "Od prvog poziva do prve provizije.",
     description:
       "Većina ljudi u nekretnine uđe tako što dobije telefon i rečenicu „zovi, snađi se”. To ne donosi rezultat. Ovaj kurs radi suprotno.",
     href: "/pocetnici",

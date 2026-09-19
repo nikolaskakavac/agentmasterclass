@@ -17,8 +17,8 @@ const schedule = [
 
 const faq = [
   { question: "Koji program je za mene?", answer: "Ako još nisi radio kao agent, izaberi program za početnike. Ako već radiš i problem ti je u razgovoru sa klijentom, izaberi program prodajnih veština." },
-  { question: "Da li dobijam licencu?", answer: "Ne. Uverenje o položenom stručnom ispitu izdaje Ministarstvo trgovine. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred Ministarstvom." },
-  { question: "Koliko traje kurs?", answer: "Četiri subote. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze." },
+  { question: "Da li dobijam licencu?", answer: "Ne. Agent Masterclass je privatna obuka i ne izdaje licencu ni uverenje o položenom stručnom ispitu. Program za početnike te uvodi u oblasti ispita i daje ti gradivo i plan učenja, ali sam ispit polažeš pred nadležnim ministarstvom." },
+  { question: "Koliko traje kurs?", answer: "4 dana predavanja tokom jednog meseca. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze." },
   { question: "Da li se sve radi uživo?", answer: "Da. Nema snimaka. Program se zasniva na simulacijama koje se izvode u sali." },
   { question: "Koliko ljudi je u grupi?", answer: "Grupa je ograničena kako bi svaki polaznik stigao da odigra scenarije." },
 ] as const;
@@ -49,7 +49,7 @@ export default function Home() {
         <div className="program-grid">
           {programs.map((program) => <article id={program.id} key={program.id} className={`program-card program-${program.variant}`}>
             <p className="eyebrow">{program.eyebrow}</p><h3>{program.title}</h3><p>{program.description}</p>
-            <p className="program-meta">4 subote · 3 bloka po 70 minuta · 30 minuta pauze · {program.price}</p>
+            <p className="program-meta">{siteConfig.programDuration} · 3 bloka po 70 minuta · 30 minuta pauze · {program.price}</p>
             <ButtonLink href={program.href} variant={program.variant === "dark" ? "primary" : "secondary"}>Pogledaj program <span aria-hidden="true">→</span></ButtonLink>
           </article>)}
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
 
     <Section className="teacher-section">
       <Container className="teacher-grid"><figure className="portrait-frame teacher-photo"><Image className="stock-image" src="/images/modern-architecture.jpg" alt="Savremena poslovna arhitektura" width={1600} height={1067} sizes="(min-width: 768px) 40vw, 100vw" /></figure>
-        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
+        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Dugogodišnji agent i vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
       </Container>
     </Section>
 

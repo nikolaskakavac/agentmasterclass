@@ -24,8 +24,6 @@ export type ProgramPageData = {
   exam?: { paragraphs: string[]; disclaimer: string };
 };
 
-const duration = "4 predavanja tokom jednog meseca";
-
 export const beginnerProgram: ProgramPageData = {
   slug: "pocetnici",
   eyebrow: "ZA ONE KOJI TEK ULAZE U POSAO",
@@ -42,11 +40,11 @@ export const beginnerProgram: ProgramPageData = {
     { type: "paragraph", text: "Većina novih agenata uči tako što ih neko pošalje na teren i kaže: „Snađi se.”" },
     { type: "paragraph", text: "Ovaj program radi suprotno." },
     { type: "paragraph", text: "Za četiri predavanja prolazimo ceo posao agenta od prvog poziva do zaključenja prodaje, korak po korak." },
-    { type: "meta", text: `${duration} · ${siteConfig.beginnerPrice}` },
+    { type: "meta", text: `${siteConfig.programDuration} · ${siteConfig.beginnerPrice}` },
     { type: "paragraph", text: "Na kraju programa znaćeš kako da dođeš do prve nekretnine koju ćeš prodavati, kako da proceniš njenu realnu tržišnu vrednost, koji troškovi prate prodaju i kupovinu nekretnine, i koje greške mogu da te koštaju posla." },
     { type: "paragraph", text: "Radi se uživo, kroz simulacije i praktičan rad – ne samo slušanjem." },
   ],
-  duration,
+  duration: siteConfig.programDuration,
   coverage: [
     { title: "Kako se u ovom poslu zarađuje i šta je potrebno da se dođe do prve provizije" },
     { title: "Kako da dođeš do nekretnine u ponudi i kako se vodi razgovor sa prodavcem" },
@@ -101,10 +99,10 @@ export const salesProgram: ProgramPageData = {
   mobileIntro: "Obuka se održava uživo u Beogradu. Program vodi Marija Miškinović, dugogodišnji agent i vlasnica agencije za nekretnine.",
   intro: [
     { type: "paragraph", text: "Imaš kontakte, izlaziš na terene, zoveš klijente - a razgovor se svejedno završi sa „javiću Vam se”. Problem retko leži u ceni. Leži u tome ko kontroliše tok razgovora, ti ili klijent." },
-    { type: "meta", text: `${duration} · ${siteConfig.salesPrice}` },
+    { type: "meta", text: `${siteConfig.programDuration} · ${siteConfig.salesPrice}` },
     { type: "paragraph", text: "Ovaj program je fokusiran na ono što pravi razliku u svakodnevnom radu agenta: kako da otkriješ šta klijent zaista traži, kako da vodiš razgovor i obilazak sa jasnim ciljem i dovedeš komunikaciju do konkretne odluke." },
   ],
-  duration,
+  duration: siteConfig.programDuration,
   coverage: [
     { title: "Pitanja koja otkrivaju stvarne potrebe klijenta", description: "Kako da saznaš pravi budžet, rokove, kriterijume i ono što klijentu zaista predstavlja prioritet." },
     { title: "Kako da vodiš obilazak, a ne samo pokazuješ nekretninu", description: "Kako da strukturišeš obilazak, čitaš reakcije klijenta i vodiš razgovor ka sledećem koraku." },
@@ -146,7 +144,7 @@ export const salesProgram: ProgramPageData = {
     "Ne želiš da učestvuješ u praktičnim vežbama i simulacijama pred grupom",
   ],
   faq: [
-    { question: "Koliko traje kurs?", answer: "Četiri predavanja, raspoređena tokom jednog meseca. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze između blokova." },
+    { question: "Koliko traje kurs?", answer: "4 dana predavanja tokom jednog meseca. Svaki termin ima 3 bloka po 70 minuta, uz 30 minuta pauze između blokova." },
     { question: "Da li se edukacija dešava uživo?", answer: "Da. Nema snimaka. Program se zasniva na radu uživo i praktičnim simulacijama koje se izvode u sali." },
   ],
   price: siteConfig.salesPrice,

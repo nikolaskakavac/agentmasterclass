@@ -22,7 +22,7 @@ export function MobileCta() {
   }, [hiddenOnFlowPage, pathname]);
   if (hiddenOnFlowPage) return null;
   return <div className={`mobile-cta ${visible ? "is-visible" : ""}`} aria-hidden={!visible}>
-    <p>{program ? price : `Od ${price}`} <span>· 4 subote</span></p>
+    <p>{program ? price : `Od ${price}`} <span>· {siteConfig.programDuration}</span></p>
     <Link href={program ? `/prijava?program=${program}` : "/prijava"} tabIndex={visible ? 0 : -1}>Prijavi se</Link>
   </div>;
 }

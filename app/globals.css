@@ -203,7 +203,7 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
   .site-header>div { height:72px; }
   .hero-grid { grid-template-columns:minmax(0,7fr) minmax(380px,5fr); gap:clamp(60px,7vw,108px); min-height:calc(100svh - 72px); max-height:840px; padding-top:68px; padding-bottom:68px; align-items:stretch; }
   .hero-copy { justify-content:center; padding:34px 0 42px; }
-  .hero-copy::after { content:"4 SUBOTE · 4 SATA PO TERMINU"; width:max-content; margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,255,255,.2); color:#8f999f; font-size:.67rem; line-height:1; letter-spacing:.13em; }
+  .hero-copy::after { content:"4 DANA PREDAVANJA · 4 SATA PO TERMINU"; width:max-content; margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,255,255,.2); color:#8f999f; font-size:.67rem; line-height:1; letter-spacing:.13em; }
   .hero-copy h1 { max-width:610px; margin-bottom:26px; font-size:clamp(3rem,4.1vw,3.5rem); line-height:1.01; letter-spacing:-.05em; }
   .hero-copy>p:not(.eyebrow) { max-width:590px; font-size:1.04rem; line-height:1.62; }
   .hero-copy>.eyebrow { margin-bottom:22px; }
