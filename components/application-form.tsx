@@ -99,7 +99,7 @@ export function ApplicationForm({ initialProgram }: { initialProgram: ProgramVal
     }
   };
 
-  const selected = programOptions.find((option) => option.value === values.program) ?? programOptions[2];
+  const selected = programOptions.find((option) => option.value === values.program) ?? programOptions[0];
   const program = programs.find((item) => item.id === selected.slug);
 
   return <div className="application-layout">

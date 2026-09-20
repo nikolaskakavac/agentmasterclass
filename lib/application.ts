@@ -87,5 +87,5 @@ export function mapApplicant(value: string) {
 export function programFromQuery(value?: string) : ProgramValue {
   if (value === "pocetnici") return "BEGINNER";
   if (value === "prodajne-vestine") return "SALES_SKILLS";
-  return "UNSURE";
+  return "BEGINNER";
 }
