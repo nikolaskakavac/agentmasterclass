@@ -144,7 +144,8 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
 .footer-resume-action a { text-decoration:underline; text-decoration-color:rgba(180,138,90,.55); text-underline-offset:4px; }
 .footer-bottom .legal { width:100%; }
 .footer-phone { width:max-content; min-height:48px; display:inline-flex; align-items:center; color:var(--accent); font-weight:650; }
-.contact-phone-link { min-height:48px; display:inline-flex; align-items:center; color:#765329; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.contact-phone-line { margin-bottom:38px; font-size:1rem; }
+.contact-phone-link { min-height:48px; display:inline-flex; align-items:center; color:#765329; font-weight:650; text-decoration:underline; text-underline-offset:4px; }
 .floating-call { position:fixed; z-index:61; right:20px; bottom:calc(80px + env(safe-area-inset-bottom)); width:52px; height:52px; display:grid; place-items:center; border:1px solid rgba(180,138,90,.7); border-radius:50%; background:var(--ink); color:var(--accent); box-shadow:0 4px 16px rgba(0,0,0,.18); transition:background-color var(--motion-fast),color var(--motion-fast),border-color var(--motion-fast); }
 .floating-call svg { width:23px; height:23px; }
 .floating-call:hover { background:var(--accent); color:var(--ink); border-color:var(--accent); }
