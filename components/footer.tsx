@@ -11,10 +11,11 @@ export function Footer() {
   return <footer className="footer">
     <Container>
       <div className="footer-desktop">
-        <div><p className="brand brand-footer">Agent<span>Masterclass</span></p><p>Škola za agente za nekretnine.</p></div>
+        <div><p className="brand brand-footer">Agent<span>Masterclass</span></p><p>Škola za agente za nekretnine.</p><a className="footer-phone" href={siteConfig.phoneHref}>{siteConfig.phone}</a></div>
         {groups.map((group) => <div key={group.label}><h3>{group.label}</h3>{group.links.map((link) => <Link key={link.label} href={link.href}>{link.label}</Link>)}</div>)}
       </div>
       <div className="footer-mobile">
+        <a className="footer-phone" href={siteConfig.phoneHref}>{siteConfig.phone}</a>
         {groups.map((group) => <details key={group.label}><summary>{group.label}<span>+</span></summary>{group.links.map((link) => <Link key={link.label} href={link.href}>{link.label}</Link>)}</details>)}
       </div>
       <div className="footer-bottom">

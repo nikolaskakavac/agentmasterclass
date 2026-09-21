@@ -57,6 +57,8 @@ export default function Home() {
       </Container>
     </Section>
 
+    <Testimonials />
+
     <Section className="reasons-section">
       <Container><SectionHeading eyebrow="ZAŠTO AGENT MASTERCLASS" title="Škola zasnovana na poslu, ne na teoriji." />
         <div className="reasons-grid">{reasons.map((reason) => <article key={reason.number} className="reason-card"><IconMark>{reason.number}</IconMark><h3>{reason.title}</h3><p>{reason.text}</p></article>)}</div>
@@ -74,8 +76,6 @@ export default function Home() {
         <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Dugogodišnji agent i vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
       </Container>
     </Section>
-
-    <Testimonials />
 
     <Section className="teams-section"><Container><div className="teams-band"><div><p className="eyebrow">ZA AGENCIJE</p><h2>Šalješ ceo tim?</h2><p>Kada ceo tim prođe istu obuku, prestaje da se dešava da svaki agent vodi razgovor na svoj način. Za grupe od tri i više polaznika dostupan je popust.</p></div><ButtonLink href="/za-agencije">Zatraži ponudu <span aria-hidden="true">→</span></ButtonLink></div></Container></Section>
 

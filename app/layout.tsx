@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { MotionController } from "@/components/motion-controller";
+import { FloatingCall } from "@/components/floating-call";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -25,5 +26,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="sr-Latn" className={`${inter.variable} ${plexSans.variable}`}><body><Header />{children}<Footer /><MobileCta /><MotionController /></body></html>;
+  return <html lang="sr-Latn" className={`${inter.variable} ${plexSans.variable}`}><body><Header />{children}<Footer /><MobileCta /><FloatingCall /><MotionController /></body></html>;
 }

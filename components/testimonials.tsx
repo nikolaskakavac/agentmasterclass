@@ -21,8 +21,8 @@ export function Testimonials() {
       <div className="testimonial-heading-row">
         <SectionHeading eyebrow="ISKUSTVA POLAZNIKA" title="Utisci i rezultati" />
         <div className="testimonial-rail-controls" aria-label="Kontrole video utisaka">
-          <button type="button" onClick={() => scrollTestimonials(-1)} aria-label="Prethodni video utisak">←</button>
-          <button type="button" onClick={() => scrollTestimonials(1)} aria-label="Sledeći video utisak">→</button>
+          <button type="button" onClick={() => scrollTestimonials(-1)} aria-label="Prethodni video utisak"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="m10 5-7 7 7 7M3 12h18" /></svg></button>
+          <button type="button" onClick={() => scrollTestimonials(1)} aria-label="Sledeći video utisak"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="m14 5 7 7-7 7M21 12H3" /></svg></button>
         </div>
       </div>
       <div className="testimonial-video-grid" ref={railRef}>
