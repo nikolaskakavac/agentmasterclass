@@ -39,7 +39,7 @@ export function Header() {
     </Container>
     <nav id="mobile-navigation" aria-label="Mobilna navigacija" aria-hidden={!open} data-open={open} className="mobile-nav lg:hidden">
       <Container className="flex flex-col py-3">
-        {navigation.map((item) => <Link key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{item.label}<span aria-hidden="true">→</span></Link>)}
+        {navigation.map((item) => <Link key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{item.label}</Link>)}
         <Link href="/uplata" className="resume-mobile-link" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}><span><small>Već si se prijavio?</small><strong>Nastavi na uplatu</strong></span></Link>
       </Container>
     </nav>
