@@ -42,7 +42,7 @@ export const beginnerProgram: ProgramPageData = {
     { type: "paragraph", text: "Za četiri predavanja prolazimo ceo posao agenta od prvog poziva do zaključenja prodaje, korak po korak." },
     { type: "meta", text: `${siteConfig.programDuration} · ${siteConfig.beginnerPrice}` },
     { type: "paragraph", text: "Na kraju programa znaćeš kako da dođeš do prve nekretnine koju ćeš prodavati, kako da proceniš njenu realnu tržišnu vrednost, koji troškovi prate prodaju i kupovinu nekretnine, i koje greške mogu da te koštaju posla." },
-    { type: "paragraph", text: "Radi se uživo, kroz simulacije i praktičan rad – ne samo slušanjem." },
+    { type: "paragraph", text: "Radi se uživo, kroz simulacije i praktičan rad - ne samo slušanjem." },
   ],
   duration: siteConfig.programDuration,
   coverage: [
@@ -69,7 +69,7 @@ export const beginnerProgram: ProgramPageData = {
   ],
   materials: [
     { title: "Udžbenik programa", description: "Vodi te kroz sva četiri predavanja i ostaje ti kao praktičan materijal za rad i nakon programa." },
-    { title: "Skripta prigovora sa telefona", description: "Najčešći prigovori prodavaca kada zoveš da dobiješ nekretninu — proveren odgovor za svaku situaciju." },
+    { title: "Skripta prigovora sa telefona", description: "Najčešći prigovori prodavaca kada zoveš da dobiješ nekretninu - proveren odgovor za svaku situaciju." },
     { title: "Struktura poziva", description: "Kako da otvoriš poziv, šta da kažeš u prvih deset sekundi i kako da vodiš razgovor ka konkretnom rezultatu." },
     { title: "Priručnik sa procedurama", description: "Liste dokumentacije, koraci u poslu od prvog poziva do uknjižbe i situacije u kojima treba stati." },
     { title: "Gradivo za stručni ispit", description: "Organizovano gradivo uz plan učenja po nedeljama." },
@@ -96,7 +96,7 @@ export const salesProgram: ProgramPageData = {
   slug: "prodajne-vestine",
   eyebrow: "ZA AGENTE KOJI VEĆ RADE",
   title: "Prodajne veštine za agente za nekretnine",
-  mobileIntro: "Obuka se održava uživo u Beogradu. Program vodi Marija Miškinović, dugogodišnji agent i vlasnica agencije za nekretnine.",
+  mobileIntro: "Obuka se održava uživo u Beogradu. Program vodi Marija Miskinović, dugogodišnji agent i vlasnica agencije za nekretnine.",
   intro: [
     { type: "paragraph", text: "Imaš kontakte, izlaziš na terene, zoveš klijente - a razgovor se svejedno završi sa „javiću Vam se”. Problem retko leži u ceni. Leži u tome ko kontroliše tok razgovora, ti ili klijent." },
     { type: "meta", text: `${siteConfig.programDuration} · ${siteConfig.salesPrice}` },

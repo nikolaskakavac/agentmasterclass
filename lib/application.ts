@@ -7,14 +7,14 @@ export const programOptions = [
 export const experienceOptions = [
   { value: "NONE", label: "Ne" },
   { value: "UNDER_SIX_MONTHS", label: "Manje od 6 meseci" },
-  { value: "SIX_TO_TWELVE_MONTHS", label: "6–12 meseci" },
-  { value: "ONE_TO_THREE_YEARS", label: "1–3 godine" },
+  { value: "SIX_TO_TWELVE_MONTHS", label: "6-12 meseci" },
+  { value: "ONE_TO_THREE_YEARS", label: "1-3 godine" },
   { value: "OVER_THREE_YEARS", label: "Više od 3 godine" },
 ] as const;
 
 export const applicantOptions = [
   { value: "INDIVIDUAL", label: "Sam" },
-  { value: "TEAM_TWO_TO_THREE", label: "2–3 osobe" },
+  { value: "TEAM_TWO_TO_THREE", label: "2-3 osobe" },
   { value: "TEAM_FOUR_PLUS", label: "4+" },
 ] as const;
 

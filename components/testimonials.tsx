@@ -3,6 +3,11 @@
 import { useRef } from "react";
 import { Container, Section, SectionHeading } from "@/components/ui";
 
+const testimonialDescriptions: Record<number, string> = {
+  1: "Nikola o svom iskustvu sa edukacije - šta je naučio o prodaji i zašto se sada oseća spremnim za prodaju nekretnina.",
+  2: "Nevena je na edukaciju došla kao potpuni početnik, bez ikakvog predznanja o prodaji. Danas, nakon završene edukacije, radi kao agent u agenciji kod Marije.",
+};
+
 export function Testimonials() {
   const railRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +31,8 @@ export function Testimonials() {
         </div>
       </div>
       <div className="testimonial-video-grid" ref={railRef}>
-        {[1, 2, 3].map((number) => <div className="testimonial-video" key={number}>
+        {[1, 2, 3].map((number) => <article className="testimonial-video" key={number}>
+          {testimonialDescriptions[number] && <p className="testimonial-description">{testimonialDescriptions[number]}</p>}
           <video
             aria-label={`Video utisak polaznika ${number}`}
             controls
@@ -37,7 +43,7 @@ export function Testimonials() {
             <source src={`/videos/testimonial-${number}.mp4`} type="video/mp4" />
             Tvoj pregledač ne podržava video reprodukciju.
           </video>
-        </div>)}
+        </article>)}
       </div>
     </Container>
   </Section>;

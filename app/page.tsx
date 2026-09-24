@@ -30,8 +30,8 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">AGENT MASTERCLASS</p>
           <h1>Škola za agente za nekretnine</h1>
-          <p className="hero-mobile-text">Obuka uživo u {siteConfig.cityLocative}. Predaje Marija Miškinović, vlasnica agencije za nekretnine.</p>
-          <p className="hero-desktop-text">Dva programa uživo u {siteConfig.cityLocative}. Jedan za one koji tek ulaze u posao, drugi za agente koji već rade, ali ne zatvaraju dovoljno. Predaje Marija Miškinović, vlasnica agencije za nekretnine i aktivni profesionalac sa terena.</p>
+          <p className="hero-mobile-text">Obuka uživo u {siteConfig.cityLocative}. Predaje Marija Miskinović, vlasnica agencije za nekretnine.</p>
+          <p className="hero-desktop-text">Dva programa uživo u {siteConfig.cityLocative}. Jedan za one koji tek ulaze u posao, drugi za agente koji već rade, ali ne zatvaraju dovoljno. Predaje Marija Miskinović, vlasnica agencije za nekretnine i aktivni profesionalac sa terena.</p>
           <div className="hero-actions">
             <ButtonLink href="#pocetnici">Tek ulazim u posao <span aria-hidden="true">→</span></ButtonLink>
             <ButtonLink href="#agenti" variant="outline">Već radim kao agent <span aria-hidden="true">→</span></ButtonLink>
@@ -72,8 +72,8 @@ export default function Home() {
     </Section>
 
     <Section className="teacher-section">
-      <Container className="teacher-grid"><figure className="portrait-frame teacher-photo"><Image className="stock-image" src="/images/marija-miskinovic.jpeg" alt="Marija Miškinović" width={1600} height={2400} sizes="(min-width: 768px) 40vw, 100vw" /></figure>
-        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miškinović</h2><p className="teacher-role">Dugogodišnji agent i vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
+      <Container className="teacher-grid"><figure className="portrait-frame teacher-photo"><Image className="stock-image" src="/images/marija-miskinovic.jpeg" alt="Marija Miskinović" width={1600} height={2400} sizes="(min-width: 768px) 40vw, 100vw" /></figure>
+        <div className="teacher-copy"><p className="eyebrow">PREDAVAČ</p><h2>Marija Miskinović</h2><p className="teacher-role">Dugogodišnji agent i vlasnica agencije za nekretnine</p><p>Marija vodi agenciju za nekretnine i dalje aktivno radi sa klijentima. Ne predaje iz teorije, već iz posla koji obavlja svakog dana.</p><p>Oba programa su nastala iz onoga što je videla kao najčešći razlog propalih poslova: agent koji zna nekretninu, ali ne zna razgovor.</p><ButtonLink href="/predavac" variant="secondary">Više o Mariji <span aria-hidden="true">→</span></ButtonLink></div>
       </Container>
     </Section>
 
