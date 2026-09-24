@@ -6,6 +6,7 @@ import { Container, Section, SectionHeading } from "@/components/ui";
 const testimonialDescriptions: Record<number, string> = {
   1: "Nikola o svom iskustvu sa edukacije - šta je naučio o prodaji i zašto se sada oseća spremnim za prodaju nekretnina.",
   2: "Nevena je na edukaciju došla kao potpuni početnik, bez ikakvog predznanja o prodaji. Danas, nakon završene edukacije, radi kao agent u agenciji kod Marije.",
+  3: "Osvesti gde grešiš, dodji na obuku, nauči da komuniciraš, nauči da prodaješ, zaradi proviziju! Dajem ti znanje, veštine i alate kroz godine rada, iskustva i učenja.",
 };
 
 export function Testimonials() {
@@ -32,7 +33,7 @@ export function Testimonials() {
       </div>
       <div className="testimonial-video-grid" ref={railRef}>
         {[1, 2, 3].map((number) => <article className="testimonial-video" key={number}>
-          {testimonialDescriptions[number] && <p className="testimonial-description">{testimonialDescriptions[number]}</p>}
+          <p className="testimonial-description">{testimonialDescriptions[number]}</p>
           <video
             aria-label={`Video utisak polaznika ${number}`}
             controls
