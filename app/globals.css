@@ -108,7 +108,7 @@ h3 { line-height:1.2; letter-spacing:-.02em; }
 .testimonial-video-grid { display:flex; gap:16px; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
 .testimonial-video-grid::-webkit-scrollbar { display:none; }
 .testimonial-video { flex:0 0 min(calc(100% - 36px),360px); width:100%; display:grid; grid-template-rows:184px auto; align-self:start; background:#080c10; scroll-snap-align:start; scroll-snap-stop:always; }
-.testimonial-description { margin:0; padding:0 18px; display:flex; align-items:flex-end; color:#e1e4e6; font-size:.9rem; line-height:1.55; }
+.testimonial-description { margin:0; padding:0 18px; display:flex; align-items:flex-start; color:#e1e4e6; font-size:.9rem; line-height:1.55; }
 .testimonial-description span { width:100%; padding:10px 0; border-top:3px solid var(--accent); }
 .testimonial-video video { width:100%; height:auto; aspect-ratio:9/16; display:block; background:#080c10; object-fit:contain; }
 .teams-section { padding-top:0; background:var(--white); }
