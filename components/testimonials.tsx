@@ -33,7 +33,7 @@ export function Testimonials() {
       </div>
       <div className="testimonial-video-grid" ref={railRef}>
         {[1, 2, 3].map((number) => <article className="testimonial-video" key={number}>
-          <p className="testimonial-description">{testimonialDescriptions[number]}</p>
+          <p className="testimonial-description"><span>{testimonialDescriptions[number]}</span></p>
           <video
             aria-label={`Video utisak polaznika ${number}`}
             controls
